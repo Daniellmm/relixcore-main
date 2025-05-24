@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <!-- #title -->
+    <title>RelixCore - Portfolio </title>
+    <!-- #keywords -->
+    <meta name="keywords" content="creative, agency, portfolio">
+    <!-- #description -->
+    <meta name="description" content="Creative Agency Portfolio HTML5 Template">
+    <!-- ==== css dependencies start ==== -->
+    <!-- bootstrap five css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- glyphter css -->
+    <link rel="stylesheet" href="assets/vendor/glyyphter/css/xpovio.css">
+    <!-- font awesome six css -->
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css">
+    <!-- nice select css -->
+    <link rel="stylesheet" href="assets/vendor/nice-select/css/nice-select.css">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/css/magnific-popup.css">
+    <!-- slick css -->
+    <link rel="stylesheet" href="assets/vendor/slick/css/slick.css">
+    <!-- ==== / css dependencies end ==== -->
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.min.css">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#e51b20", secondary: "#757575" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+   <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .tab-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-card.hidden {
+            display: none !important;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-indicator {
+            transition: transform 0.3s ease;
+        }
+
+        /* Improved sticky tabs positioning */
+        .sticky-tabs {
+            position: sticky;
+            top: 73px;
+            z-index: 40;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Active tab styles */
+        .tab-button.active {
+            color: #e51b20 !important;
+            position: relative;
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #e51b20;
+        }
+
+        .tab-button {
+            color: #6b7280;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+            border: none;
+            background: none;
+            padding: 0.5rem 0.25rem;
+            font-weight: 500;
+        }
+
+        .tab-button:hover {
+            color: #e51b20;
+        }
+
+        /* Navigation header height */
+        .header {
+            height: 73px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="my-app">
+        <!-- ==== preloader start ==== -->
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
+        <!-- ==== / preloader end ==== -->
+        <!-- ==== mouse cursor drag start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner">
+            <span>Drag</span>
+        </div>
+        <!-- ==== / mouse cursor drag end ==== -->
+
+        <!-- ==== header start ==== -->
+        <header class="header sticky top-0 z-50 bg-white">
+            <div class="primary-navbar cmn-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar p-0">
+                                <div class="navbar__logo">
+                                    <a href="index.html" aria-label="go to home">
+                                        <img src="assets/images/logo.png" class="size-20" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="navbar__menu">
+                                    <ul>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="portfolio.html">Portfolio</a>
+                                        </li>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="contact-us.html">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- ==== mobile menu start ==== -->
+                <div class="mobile-menu">
+                    <nav class="mobile-menu__wrapper">
+                        <div class="mobile-menu__header nav-fade">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo.png" alt="" title="">
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)" aria-label="close mobile menu" class="close-mobile-menu">
+                                <i class="fa-light fa-xmark-large"></i>
+                            </a>
+                        </div>
+                        <div class="mobile-menu__list"></div>
+                        <div class="mobile-menu__options d-flex d-sm-none justify-content-center nav-fade"></div>
+                        <div class="mobile-menu__social social nav-fade">
+                            <a href="https://x.com/CoreRelix" target="_blank" aria-label="share us on X(twitter)">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/relix_core" target="_blank"
+                                aria-label="share us on instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="mobile-menu__backdrop"></div>
+                <!-- ==== / mobile menu end ==== -->
+            </div>
+        </header>
+        <!-- ==== / header end ==== -->
+
+        <!-- ==== banner start ==== -->
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <section class="cmn-banner" data-background="assets/images/banner/cmn-banner-bg.png">
+                    <div class="px-20 container">
+                        <div class="row gaper align-items-center">
+                            <div class="col-12 col-lg-5 col-xl-7">
+                                <h2 class="title title-anim text-5xl">Our Portfolio</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">
+                                                <i class="fa-solid fa-house"></i>
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Portfolio
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+
+                            <div class="col-12 col-lg-7 col-xl-5">
+                                <div class="text-center text-lg-start">
+                                    <p class="primary-text">Explore our creative work across various industries and
+                                        disciplines.
+                                        Each project represents our commitment to excellence and innovation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ==== / banner end ==== -->
+
+                <!-- the scrollable tab -->
+                <section class="sticky-tabs w-full bg-white border-b border-gray-100">
+                    <div class="container mx-auto px-4 relative">
+                        <!-- Left Shadow/Indicator -->
+                        <div
+                            class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 flex items-center justify-start pl-4 tab-scroll-left hidden">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
+                                <i class="ri-arrow-left-s-line ri-lg"></i>
+                            </button>
+                        </div>
+
+                        <!-- Scrollable Tab Container -->
+                        <div class="tab-scroll-container relative overflow-x-auto py-4 flex items-center">
+                            <div class="flex space-x-8 min-w-max px-4">
+                                <button class="tab-button active" data-category="all">
+                                    All Work
+                                </button>
+                                <button class="tab-button" data-category="web-design">
+                                    Web Design
+                                </button>
+                                <button class="tab-button" data-category="branding">
+                                    Branding
+                                </button>
+                                <button class="tab-button" data-category="digital-marketing">
+                                    Digital Marketing
+                                </button>
+                                <button class="tab-button" data-category="ui-ux">
+                                    UI/UX Design
+                                </button>
+                                <button class="tab-button" data-category="print">
+                                    Print Design
+                                </button>
+                                <button class="tab-button" data-category="motion">
+                                    Motion Graphics
+                                </button>
+                                <button class="tab-button" data-category="photography">
+                                    Photography
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Shadow/Indicator -->
+                        <div
+                            class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 flex items-center justify-end pr-4 tab-scroll-right hidden">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
+                                <i class="ri-arrow-right-s-line ri-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!--  /the scrollable tab end -->
+
+                <!-- portfolio  -->
+                <section class="w-full min-h-screen py-16">
+                    <div class="container mx-auto px-4">
+                        <!-- Portfolio Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
+                            <!-- Project 1 - Web Design -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="web-design">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=modern%20minimalist%20responsive%20website%20design%20for%20a%20luxury%20fashion%20brand%2C%20clean%20interface%20with%20high-end%20photography%2C%20elegant%20typography%2C%20white%20space%2C%20professional%20web%20design%20showcase%20with%20subtle%20animations%20and%20interactive%20elements&width=600&height=400&seq=1&orientation=landscape"
+                                        alt="Fashion Website Design"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2025
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Web
+                                        Design</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        Elegance Fashion Website
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        A responsive e-commerce platform for a luxury fashion brand with
+                                        seamless user experience and elegant aesthetics.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Elegance Couture</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 - Branding -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="branding">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=modern%20brand%20identity%20design%20for%20a%20tech%20startup%2C%20featuring%20logo%20variations%2C%20color%20palette%2C%20typography%2C%20business%20cards%2C%20and%20stationery%20mockups%20on%20clean%20background%2C%20professional%20branding%20showcase%20with%20high%20quality%20presentation&width=600&height=400&seq=2&orientation=landscape"
+                                        alt="Tech Startup Branding"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2025
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Branding</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        Nexus Tech Brand Identity
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Complete brand identity system for an innovative tech startup,
+                                        including logo design, color palette, and brand guidelines.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Nexus Technologies</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 3 - Digital Marketing -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="digital-marketing">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=digital%20marketing%20campaign%20design%20social%20media%20graphics%20advertising%20banners%20professional%20marketing%20materials%20modern%20layout%20vibrant%20colors&width=600&height=400&seq=3&orientation=landscape"
+                                        alt="Digital Marketing Campaign"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2024
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Digital Marketing</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        Global Reach Campaign
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Comprehensive digital marketing campaign including social media graphics,
+                                        ad banners, and promotional materials.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Global Solutions</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 4 - UI/UX Design -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="ui-ux">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=modern%20mobile%20app%20ui%20ux%20design%20screens%20user%20interface%20wireframes%20clean%20minimal%20design%20system%20professional%20app%20mockups&width=600&height=400&seq=4&orientation=landscape"
+                                        alt="Mobile App UI/UX"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2024
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">UI/UX Design</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        FinanceFlow Mobile App
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Intuitive mobile banking app design focusing on user experience
+                                        and seamless financial transactions.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: FinanceFlow</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 5 - Print Design -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="print">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=professional%20print%20design%20brochure%20flyer%20business%20cards%20stationery%20corporate%20materials%20clean%20layout%20typography&width=600&height=400&seq=5&orientation=landscape"
+                                        alt="Print Design Materials"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2024
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Print Design</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        Corporate Stationery Set
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Complete print design package including business cards, letterheads,
+                                        and marketing brochures for a law firm.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Legal Partners</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 6 - Motion Graphics -->
+                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                                data-category="motion">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=motion%20graphics%20animation%20video%20production%20visual%20effects%20animated%20logo%20corporate%20video%20creative%20motion%20design&width=600&height=400&seq=6&orientation=landscape"
+                                        alt="Motion Graphics"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2024
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Motion Graphics</span>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        Brand Animation Series
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Dynamic motion graphics and animated elements for brand storytelling
+                                        and social media campaigns.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Creative Studios</span>
+                                        <button
+                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- portfolio end -->
+
+                <!-- ==== scroll to top start ==== -->
+                <button class="progress-wrap" aria-label="scroll indicator" title="go to top">
+                    <span></span>
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                    </svg>
+                </button>
+                <!-- ==== / scroll to top end ==== -->
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabContainer = document.querySelector(".tab-scroll-container");
+                const leftArrow = document.querySelector(".tab-scroll-left");
+                const rightArrow = document.querySelector(".tab-scroll-right");
+                const tabButtons = document.querySelectorAll(".tab-button");
+                const projectCards = document.querySelectorAll(".project-card");
+
+                // Function to update active tab styling
+                function updateActiveTab(activeButton) {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    activeButton.classList.add('active');
+                }
+
+                // Function to filter projects with animation
+                function filterProjects(category) {
+                    projectCards.forEach((card, index) => {
+                        const cardCategory = card.getAttribute("data-category");
+                        const shouldShow = category === "all" || cardCategory === category;
+                        
+                        if (shouldShow) {
+                            // Show the card
+                            card.style.opacity = "0";
+                            card.style.transform = "translateY(20px)";
+                            card.style.display = "block";
+                            
+                            // Animate in with delay
+                            setTimeout(() => {
+                                card.style.opacity = "1";
+                                card.style.transform = "translateY(0)";
+                            }, index * 100);
+                        } else {
+                            // Hide the card
+                            card.style.opacity = "0";
+                            card.style.transform = "translateY(20px)";
+                            setTimeout(() => {
+                                card.style.display = "none";
+                            }, 300);
+                        }
+                    });
+                }
+
+                // Check if scroll is needed and update arrows
+                function checkScroll() {
+                    if (tabContainer.scrollWidth > tabContainer.clientWidth) {
+                        // Check if scrolled to start
+                        if (tabContainer.scrollLeft <= 0) {
+                            leftArrow.classList.add("hidden");
+                        } else {
+                            leftArrow.classList.remove("hidden");
+                        }
+
+                        // Check if scrolled to end
+                        if (tabContainer.scrollLeft + tabContainer.clientWidth >= tabContainer.scrollWidth - 10) {
+                            rightArrow.classList.add("hidden");
+                        } else {
+                            rightArrow.classList.remove("hidden");
+                        }
+                    } else {
+                        leftArrow.classList.add("hidden");
+                        rightArrow.classList.add("hidden");
+                    }
+                }
+
+                // Initialize scroll check
+                checkScroll();
+
+                // Scroll left
+                if (leftArrow) {
+                    leftArrow.addEventListener("click", function () {
+                        tabContainer.scrollBy({ left: -200, behavior: "smooth" });
+                        setTimeout(checkScroll, 300);
+                    });
+                }
+
+                // Scroll right
+                if (rightArrow) {
+                    rightArrow.addEventListener("click", function () {
+                        tabContainer.scrollBy({ left: 200, behavior: "smooth" });
+                        setTimeout(checkScroll, 300);
+                    });
+                }
+
+                // Listen for scroll events
+                tabContainer.addEventListener("scroll", checkScroll);
+
+                // Window resize event
+                window.addEventListener("resize", checkScroll);
+
+                // Tab filtering functionality
+                tabButtons.forEach((button) => {
+                    button.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        
+                        const category = this.getAttribute("data-category");
+                        
+                        // Update active tab styling
+                        updateActiveTab(this);
+                        
+                        // Filter projects
+                        filterProjects(category);
+                    });
+                });
+
+                // Initialize with "All Work" active
+                filterProjects("all");
+            });
+        </script>
+
+        <!-- jquery -->
+        <script src="assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+        <!-- bootstrap five js -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- nice select js -->
+        <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+        <!-- magnific popup js -->
+        <script src="assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+        <!-- slick js -->
+        <script src="assets/vendor/slick/js/slick.min.js"></script>
+        <!-- image loaded js -->
+        <script src="assets/vendor/images-loaded/imagesloaded.pkgd.min.js"></script>
+        <!-- isotope js -->
+        <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+        <!-- chroma js -->
+        <script src="assets/vendor/gsap/chroma.min.js"></script>
+        <!-- splittext js -->
+        <script src="assets/vendor/gsap/SplitText.min.js"></script>
+        <!-- scrollsmoother js -->
+        <script src="assets/vendor/gsap/ScrollSmoother.min.js"></script>
+        <!-- scrollto js -->
+        <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+        <!-- scrolltrigger js -->
+        <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+        <!-- gsap js -->
+        <script src="assets/vendor/gsap/gsap.min.js"></script>
+        <!-- vanilla tilt js -->
+        <script src="assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
+        <!-- ==== / js dependencies end ==== -->
+        <!-- plugins js -->
+        <script src="assets/js/plugins.js"></script>
+        <!-- main js -->
+        <script src="assets/js/main.js"></script>
+    </div>
+</body>
+
+</html>
