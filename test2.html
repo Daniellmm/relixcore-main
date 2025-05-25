@@ -58,7 +58,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
-   <style>
+
+    <style>
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
@@ -103,11 +104,11 @@
         /* Improved sticky tabs positioning */
         .sticky-tabs {
             position: sticky;
-            top: 73px;
+            top: 100px;
             z-index: 40;
-            background: white;
+            background: black;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #f3f4f6;
+
         }
 
         input[type="number"]::-webkit-inner-spin-button,
@@ -170,7 +171,7 @@
         <!-- ==== / mouse cursor drag end ==== -->
 
         <!-- ==== header start ==== -->
-        <header class="header sticky top-0 z-50 bg-white">
+        <header class="header sticky top-0 z-50">
             <div class="primary-navbar cmn-nav">
                 <div class="container">
                     <div class="row">
@@ -217,9 +218,15 @@
                         <div class="mobile-menu__list"></div>
                         <div class="mobile-menu__options d-flex d-sm-none justify-content-center nav-fade"></div>
                         <div class="mobile-menu__social social nav-fade">
+                            <!--<a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                     </a>-->
                             <a href="https://x.com/CoreRelix" target="_blank" aria-label="share us on X(twitter)">
                                 <i class="fa-brands fa-twitter"></i>
                             </a>
+                            <!--<a href="https://www.pinterest.com/" target="_blank" aria-label="share us on pinterest">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                     </a>-->
                             <a href="https://www.instagram.com/relix_core" target="_blank"
                                 aria-label="share us on instagram">
                                 <i class="fa-brands fa-instagram"></i>
@@ -230,8 +237,64 @@
                 <div class="mobile-menu__backdrop"></div>
                 <!-- ==== / mobile menu end ==== -->
             </div>
+
+            <!-- the scrollable tab -->
+            <section class="sticky-tabs fixed w-full bg-black">
+                <div class="container mx-auto px-4 relative">
+                    <!-- Left Shadow/Indicator -->
+                    <div
+                        class="absolute -left-3 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-4 tab-scroll-left hidden">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
+                            <i class="ri-arrow-left-s-line ri-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Scrollable Tab Container -->
+                    <div class="tab-scroll-container relative overflow-x-auto py-4 flex items-center">
+                        <div class="flex space-x-8 min-w-max px-4">
+                            <button class="tab-button active" data-category="all">
+                                All Work
+                            </button>
+                            <button class="tab-button" data-category="web-design">
+                                Web Design
+                            </button>
+                            <button class="tab-button" data-category="branding">
+                                Branding
+                            </button>
+                            <button class="tab-button" data-category="digital-marketing">
+                                Digital Marketing
+                            </button>
+                            <button class="tab-button" data-category="ui-ux">
+                                UI/UX Design
+                            </button>
+                            <button class="tab-button" data-category="print">
+                                Print Design
+                            </button>
+                            <button class="tab-button" data-category="motion">
+                                Motion Graphics
+                            </button>
+                            <button class="tab-button" data-category="photography">
+                                Photography
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Shadow/Indicator -->
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-4 tab-scroll-right hidden">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
+                            <i class="ri-arrow-right-s-line ri-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!--  /the scrollable tab end -->
         </header>
         <!-- ==== / header end ==== -->
+
+
 
         <!-- ==== banner start ==== -->
         <div id="smooth-wrapper">
@@ -240,7 +303,7 @@
                     <div class="px-20 container">
                         <div class="row gaper align-items-center">
                             <div class="col-12 col-lg-5 col-xl-7">
-                                <h2 class="title title-anim text-5xl">Our Portfolio</h2>
+                                <h2 class="title title-anim text-3xl lg:text-5xl">Our Portfolio</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
@@ -268,67 +331,15 @@
                 </section>
                 <!-- ==== / banner end ==== -->
 
-                <!-- the scrollable tab -->
-                <section class="sticky-tabs w-full bg-white border-b border-gray-100">
-                    <div class="container mx-auto px-4 relative">
-                        <!-- Left Shadow/Indicator -->
-                        <div
-                            class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 flex items-center justify-start pl-4 tab-scroll-left hidden">
-                            <button
-                                class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
-                                <i class="ri-arrow-left-s-line ri-lg"></i>
-                            </button>
-                        </div>
 
-                        <!-- Scrollable Tab Container -->
-                        <div class="tab-scroll-container relative overflow-x-auto py-4 flex items-center">
-                            <div class="flex space-x-8 min-w-max px-4">
-                                <button class="tab-button active" data-category="all">
-                                    All Work
-                                </button>
-                                <button class="tab-button" data-category="web-design">
-                                    Web Design
-                                </button>
-                                <button class="tab-button" data-category="branding">
-                                    Branding
-                                </button>
-                                <button class="tab-button" data-category="digital-marketing">
-                                    Digital Marketing
-                                </button>
-                                <button class="tab-button" data-category="ui-ux">
-                                    UI/UX Design
-                                </button>
-                                <button class="tab-button" data-category="print">
-                                    Print Design
-                                </button>
-                                <button class="tab-button" data-category="motion">
-                                    Motion Graphics
-                                </button>
-                                <button class="tab-button" data-category="photography">
-                                    Photography
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Right Shadow/Indicator -->
-                        <div
-                            class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 flex items-center justify-end pr-4 tab-scroll-right hidden">
-                            <button
-                                class="w-8 h-8 flex items-center justify-center text-gray-500 bg-white rounded-full shadow-md">
-                                <i class="ri-arrow-right-s-line ri-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-                <!--  /the scrollable tab end -->
 
                 <!-- portfolio  -->
-                <section class="w-full min-h-screen py-16">
+                <section class="w-full min-h-screen  py-16">
                     <div class="container mx-auto px-4">
                         <!-- Portfolio Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
-                            <!-- Project 1 - Web Design -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 1 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="web-design">
                                 <div class="relative overflow-hidden h-64">
                                     <img src="https://readdy.ai/api/search-image?query=modern%20minimalist%20responsive%20website%20design%20for%20a%20luxury%20fashion%20brand%2C%20clean%20interface%20with%20high-end%20photography%2C%20elegant%20typography%2C%20white%20space%2C%20professional%20web%20design%20showcase%20with%20subtle%20animations%20and%20interactive%20elements&width=600&height=400&seq=1&orientation=landscape"
@@ -341,27 +352,27 @@
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Web
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Web
                                         Design</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                    <h3 class="text-xl font-semibold text-white mb-2">
                                         Elegance Fashion Website
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
+                                    <p class="text-gray-400 mb-4">
                                         A responsive e-commerce platform for a luxury fashion brand with
                                         seamless user experience and elegant aesthetics.
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-sm text-gray-500">Client: Elegance Couture</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Project 2 - Branding -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 2 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="branding">
                                 <div class="relative overflow-hidden h-64">
                                     <img src="https://readdy.ai/api/search-image?query=modern%20brand%20identity%20design%20for%20a%20tech%20startup%2C%20featuring%20logo%20variations%2C%20color%20palette%2C%20typography%2C%20business%20cards%2C%20and%20stationery%20mockups%20on%20clean%20background%2C%20professional%20branding%20showcase%20with%20high%20quality%20presentation&width=600&height=400&seq=2&orientation=landscape"
@@ -374,30 +385,30 @@
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Branding</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Branding</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
                                         Nexus Tech Brand Identity
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
+                                    <p class="text-gray-400 mb-4">
                                         Complete brand identity system for an innovative tech startup,
                                         including logo design, color palette, and brand guidelines.
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-sm text-gray-500">Client: Nexus Technologies</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Project 3 - Digital Marketing -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 3 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="digital-marketing">
                                 <div class="relative overflow-hidden h-64">
-                                    <img src="https://readdy.ai/api/search-image?query=digital%20marketing%20campaign%20design%20social%20media%20graphics%20advertising%20banners%20professional%20marketing%20materials%20modern%20layout%20vibrant%20colors&width=600&height=400&seq=3&orientation=landscape"
-                                        alt="Digital Marketing Campaign"
+                                    <img src="https://readdy.ai/api/search-image?query=digital%20marketing%20campaign%20visualization%20with%20analytics%20dashboard%2C%20social%20media%20posts%2C%20advertisement%20designs%2C%20and%20performance%20metrics%2C%20professional%20marketing%20showcase%20with%20data%20visualization%20and%20creative%20content&width=600&height=400&seq=3&orientation=landscape"
+                                        alt="Marketing Campaign"
                                         class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
                                     <div
                                         class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
@@ -406,62 +417,65 @@
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Digital Marketing</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                        Global Reach Campaign
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Digital
+                                        Marketing</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Horizon Growth Campaign
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
-                                        Comprehensive digital marketing campaign including social media graphics,
-                                        ad banners, and promotional materials.
+                                    <p class="text-gray-400 mb-4">
+                                        Multi-channel digital marketing campaign that increased client
+                                        conversion rates by 45% through strategic content and targeted
+                                        ads.
                                     </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-500">Client: Global Solutions</span>
+                                        <span class="text-sm text-gray-500">Client: Horizon Ventures</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Project 4 - UI/UX Design -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 4 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="ui-ux">
                                 <div class="relative overflow-hidden h-64">
-                                    <img src="https://readdy.ai/api/search-image?query=modern%20mobile%20app%20ui%20ux%20design%20screens%20user%20interface%20wireframes%20clean%20minimal%20design%20system%20professional%20app%20mockups&width=600&height=400&seq=4&orientation=landscape"
+                                    <img src="https://readdy.ai/api/search-image?query=mobile%20app%20UI%20UX%20design%20with%20wireframes%2C%20user%20flow%20diagrams%2C%20interactive%20prototypes%2C%20and%20final%20interface%20screens%20for%20a%20health%20and%20fitness%20application%2C%20professional%20design%20showcase%20with%20clean%20background%20and%20organized%20presentation&width=600&height=400&seq=4&orientation=landscape"
                                         alt="Mobile App UI/UX"
                                         class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
                                     <div
                                         class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
-                                        2024
+                                        2025
                                     </div>
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">UI/UX Design</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                        FinanceFlow Mobile App
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">UI/UX
+                                        Design</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        VitalTrack Health App
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
-                                        Intuitive mobile banking app design focusing on user experience
-                                        and seamless financial transactions.
+                                    <p class="text-gray-400 mb-4">
+                                        Intuitive mobile application design for health tracking with
+                                        comprehensive user research, wireframing, and prototyping.
                                     </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-500">Client: FinanceFlow</span>
+                                        <span class="text-sm text-gray-500">Client: VitalTrack Health</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Project 5 - Print Design -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 5 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="print">
                                 <div class="relative overflow-hidden h-64">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%20print%20design%20brochure%20flyer%20business%20cards%20stationery%20corporate%20materials%20clean%20layout%20typography&width=600&height=400&seq=5&orientation=landscape"
-                                        alt="Print Design Materials"
+                                    <img src="https://readdy.ai/api/search-image?query=print%20design%20collection%20featuring%20magazine%20layouts%2C%20brochures%2C%20business%20cards%2C%20and%20packaging%20designs%20for%20a%20luxury%20brand%2C%20professional%20print%20design%20showcase%20with%20high%20quality%20photography%20of%20printed%20materials%20on%20clean%20background&width=600&height=400&seq=5&orientation=landscape"
+                                        alt="Print Design Collection"
                                         class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
                                     <div
                                         class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
@@ -470,30 +484,31 @@
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Print Design</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                        Corporate Stationery Set
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Print
+                                        Design</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Artisan Catalog Series
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
-                                        Complete print design package including business cards, letterheads,
-                                        and marketing brochures for a law firm.
+                                    <p class="text-gray-400 mb-4">
+                                        Premium print materials including catalogs, brochures, and
+                                        packaging designs for a high-end artisan product line.
                                     </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-500">Client: Legal Partners</span>
+                                        <span class="text-sm text-gray-500">Client: Artisan Collective</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Project 6 - Motion Graphics -->
-                            <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm"
+                            <!-- Project 6 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
                                 data-category="motion">
                                 <div class="relative overflow-hidden h-64">
-                                    <img src="https://readdy.ai/api/search-image?query=motion%20graphics%20animation%20video%20production%20visual%20effects%20animated%20logo%20corporate%20video%20creative%20motion%20design&width=600&height=400&seq=6&orientation=landscape"
-                                        alt="Motion Graphics"
+                                    <img src="https://readdy.ai/api/search-image?query=motion%20graphics%20project%20with%20storyboard%20frames%2C%20animation%20keyframes%2C%20and%20final%20video%20stills%20for%20a%20corporate%20explainer%20video%2C%20professional%20motion%20design%20showcase%20with%20visual%20effects%20and%20dynamic%20elements%20on%20clean%20background&width=600&height=400&seq=6&orientation=landscape"
+                                        alt="Motion Graphics Project"
                                         class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
                                     <div
                                         class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
@@ -502,18 +517,119 @@
                                 </div>
                                 <div class="p-6">
                                     <span
-                                        class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-medium rounded-full mb-3">Motion Graphics</span>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                        Brand Animation Series
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Motion
+                                        Graphics</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Innovate Explainer Series
                                     </h3>
-                                    <p class="text-gray-600 mb-4">
-                                        Dynamic motion graphics and animated elements for brand storytelling
-                                        and social media campaigns.
+                                    <p class="text-gray-400 mb-4">
+                                        Engaging motion graphics series explaining complex technological
+                                        concepts through compelling visual storytelling.
                                     </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-500">Client: Creative Studios</span>
+                                        <span class="text-sm text-gray-500">Client: Innovate Solutions</span>
                                         <button
-                                            class="text-primary font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 7 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
+                                data-category="photography">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=professional%20product%20photography%20for%20a%20luxury%20cosmetics%20brand%2C%20featuring%20elegant%20composition%2C%20perfect%20lighting%2C%20high-end%20retouching%2C%20and%20artistic%20styling%2C%20professional%20photography%20showcase%20with%20premium%20products%20on%20clean%20background&width=600&height=400&seq=7&orientation=landscape"
+                                        alt="Product Photography"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2025
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Photography</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Lumière Product Series
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        High-end product photography for a luxury cosmetics line,
+                                        featuring creative composition and meticulous lighting.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Lumière Cosmetics</span>
+                                        <button
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 8 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
+                                data-category="web-design">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=restaurant%20website%20design%20with%20elegant%20food%20photography%2C%20menu%20layouts%2C%20reservation%20system%20interface%2C%20and%20responsive%20mobile%20views%2C%20professional%20web%20design%20showcase%20for%20a%20high-end%20culinary%20establishment%20on%20clean%20background&width=600&height=400&seq=8&orientation=landscape"
+                                        alt="Restaurant Website"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2024
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Web
+                                        Design</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Saveur Restaurant Platform
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        Immersive website design for a fine dining restaurant with
+                                        online reservation system and interactive menu experience.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Saveur Bistro</span>
+                                        <button
+                                            class="text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap">
+                                            View Project <i class="ri-arrow-right-line ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 9 -->
+                            <div class="project-card bg-[#0e0e0e] rounded-lg overflow-hidden shadow-sm"
+                                data-category="branding">
+                                <div class="relative overflow-hidden h-64">
+                                    <img src="https://readdy.ai/api/search-image?query=eco-friendly%20brand%20identity%20for%20a%20sustainable%20product%20company%2C%20featuring%20organic%20design%20elements%2C%20natural%20color%20palette%2C%20recycled%20materials%20mockups%2C%20and%20environmentally%20conscious%20packaging%2C%20professional%20branding%20showcase%20on%20clean%20background&width=600&height=400&seq=9&orientation=landscape"
+                                        alt="Eco-Friendly Branding"
+                                        class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+                                    <div
+                                        class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                        2025
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-blue-50 text-[#e51b20] text-xs font-medium rounded-full mb-3">Branding</span>
+                                    <h3 class="text-xl font-semibold text-white mb-2">
+                                        Terra Sustainable Identity
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        Eco-conscious brand identity for a sustainable product line,
+                                        featuring organic design elements and recyclable packaging.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">Client: Terra Essentials</span>
+                                        <button
+                                            class="view-project text-[#e51b20] font-medium text-sm flex items-center !rounded-button whitespace-nowrap"
+                                            data-title="Elegance Fashion Website" data-client="Elegance Couture"
+                                            data-description="A responsive e-commerce platform for a luxury fashion brand..."
+                                            data-image="path_or_url_to_image">
                                             View Project <i class="ri-arrow-right-line ml-1"></i>
                                         </button>
                                     </div>
@@ -536,6 +652,21 @@
             </div>
         </div>
 
+        <!-- Project Detail Modal -->
+        <div id="projectModal" class="fixed inset-0 z-[999] bg-black bg-opacity-70 hidden items-center justify-center">
+            <div class="bg-white rounded-lg max-w-xl w-full p-6 relative">
+                <button id="closeModal"
+                    class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+                <div id="modalContent">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ==== js dependencies start ==== -->
+        <!-- custom js -->
         <!-- Scripts -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -551,7 +682,7 @@
                     tabButtons.forEach(btn => {
                         btn.classList.remove('active');
                     });
-                    
+
                     // Add active class to clicked button
                     activeButton.classList.add('active');
                 }
@@ -561,13 +692,13 @@
                     projectCards.forEach((card, index) => {
                         const cardCategory = card.getAttribute("data-category");
                         const shouldShow = category === "all" || cardCategory === category;
-                        
+
                         if (shouldShow) {
                             // Show the card
                             card.style.opacity = "0";
                             card.style.transform = "translateY(20px)";
                             card.style.display = "block";
-                            
+
                             // Animate in with delay
                             setTimeout(() => {
                                 card.style.opacity = "1";
@@ -635,12 +766,12 @@
                 tabButtons.forEach((button) => {
                     button.addEventListener("click", function (e) {
                         e.preventDefault();
-                        
+
                         const category = this.getAttribute("data-category");
-                        
+
                         // Update active tab styling
                         updateActiveTab(this);
-                        
+
                         // Filter projects
                         filterProjects(category);
                     });
@@ -648,6 +779,46 @@
 
                 // Initialize with "All Work" active
                 filterProjects("all");
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const modal = document.getElementById("projectModal");
+                const closeModal = document.getElementById("closeModal");
+                const modalContent = document.getElementById("modalContent");
+
+                document.querySelectorAll(".view-project").forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const title = button.dataset.title;
+                        const client = button.dataset.client;
+                        const description = button.dataset.description;
+                        const image = button.dataset.image;
+
+                        modalContent.innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">${title}</h2>
+          <p class="text-gray-500 mb-1"><strong>Client:</strong> ${client}</p>
+          <img src="${image}" alt="${title}" class="w-full h-48 object-cover rounded mb-4" />
+          <p class="text-gray-700">${description}</p>
+        `;
+
+                        modal.classList.remove("hidden");
+                        modal.classList.add("flex");
+                    });
+                });
+
+                closeModal.addEventListener("click", () => {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                });
+
+                // Optional: Close modal when clicking outside the content
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add("hidden");
+                        modal.classList.remove("flex");
+                    }
+                });
             });
         </script>
 
@@ -684,7 +855,6 @@
         <script src="assets/js/plugins.js"></script>
         <!-- main js -->
         <script src="assets/js/main.js"></script>
-    </div>
 </body>
 
 </html>
